@@ -32,7 +32,11 @@ public class DisplayImage {
 
             }else if("dogs".equals(input)){
                 URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\dogs.jpg";
-                DisplayImage cats = new DisplayImage();
+                DisplayImage dogs = new DisplayImage();
+
+            }else if("wizard".equals(input)) {
+                URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\wizard.jpg";
+                DisplayImage wizards = new DisplayImage();
             }else{
 
                 System.out.println("Sorry we cant find any of those images");

@@ -21,31 +21,30 @@ public class DisplayImage {
     public static void main(String avg[]) throws IOException
     {
         String input;
-        while(true){
+        String[] Dictonary = {"dogs", "cats", "wizard", "end"};
+        while(true) {
+
             Scanner scan = new Scanner(System.in);
             System.out.println("what would you like to see");
             input = scan.next();
 
-            if("cats".equals(input)){
-                URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\cats.jpg";
-                DisplayImage cats = new DisplayImage();
+            for(int i = 0; i < Dictonary.length; i++) {
 
-            }else if("dogs".equals(input)){
-                URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\dogs.jpg";
-                DisplayImage dogs = new DisplayImage();
+                if (input.equalsIgnoreCase("end")) {
+                    URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\" + input + ".jpg";
+                    System.out.println("Thank you for browsing our image repository");
+                    System.exit(0);
+                }
+                else if (input.equalsIgnoreCase(Dictonary[i])) {
+                    URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\" + input + ".jpg";
+                    DisplayImage cats = new DisplayImage();
 
-            }else if("wizard".equals(input)) {
-                URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\wizard.jpg";
-                DisplayImage wizards = new DisplayImage();
-            }else{
-
-                System.out.println("Sorry we cant find any of those images");
-                System.exit(0);
-
+                }
             }
+
+
         }
     }
-
 
     public DisplayImage() throws IOException
     {

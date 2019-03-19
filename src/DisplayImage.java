@@ -18,9 +18,12 @@ public class DisplayImage {
 
     static String URL;
 
-    public static void main(String avg[]) throws IOException
+    public static void main(String avg[]) throws IOException, Exception
     {
+
         String input;
+
+
         String[] Dictonary = {"dogs", "cats", "wizard", "end"};
         while(true) {
 
@@ -28,15 +31,21 @@ public class DisplayImage {
             System.out.println("what would you like to see");
             input = scan.next();
 
+            Details info2 = new Details("C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\" + input + ".jpg");
+            URL = info2.URL;
+
             for(int i = 0; i < Dictonary.length; i++) {
 
+
                 if (input.equalsIgnoreCase("end")) {
-                    URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\" + input + ".jpg";
-                    System.out.println("Thank you for browsing our image repository");
+
+                    System.out.printf("Thank you for browsing our image repository. File size H %s, W %s,",info2.height, info2.width);
                     System.exit(0);
                 }
+
                 else if (input.equalsIgnoreCase(Dictonary[i])) {
-                    URL = "C:\\Users\\Adam\\IdeaProjects\\ImageRepository\\src\\" + input + ".jpg";
+
+                    System.out.printf("H %s, W %s\n",info2.height, info2.width);
                     DisplayImage cats = new DisplayImage();
 
                 }
@@ -57,7 +66,6 @@ public class DisplayImage {
         lbl.setIcon(icon);
         frame.add(lbl);
         frame.setVisible(true);
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
